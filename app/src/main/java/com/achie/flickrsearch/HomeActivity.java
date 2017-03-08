@@ -1,13 +1,19 @@
 package com.achie.flickrsearch;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class HomeActivity extends AppCompatActivity {
+import com.achie.flickrsearch.base.UiActivity;
+
+public class HomeActivity extends UiActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+    }
+
+
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.activity_home;
     }
 }
