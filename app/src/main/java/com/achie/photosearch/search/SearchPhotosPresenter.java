@@ -39,4 +39,9 @@ public class SearchPhotosPresenter implements SearchPhotosContract.Presenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe();
     }
+
+    @Override
+    public void onSearchTextChange(String newText) {
+
+    }
 }

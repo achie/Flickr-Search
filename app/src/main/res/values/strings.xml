@@ -2,4 +2,7 @@
     <string name="app_name">Photos Search</string>
 
     <string name="loading">Loading&#8230;</string>
+    <string name="menu_search_photos">Search Photos</string>
+    <string name="menu_switch_to_list">List</string>
+    <string name="menu_switch_to_grid">Grid</string>
 </resources>

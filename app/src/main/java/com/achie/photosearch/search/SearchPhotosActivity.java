@@ -1,6 +1,9 @@
 package com.achie.photosearch.search;
 
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
 import android.view.View;
 
 import com.achie.photosearch.PhotoSearchApp;
@@ -28,6 +31,27 @@ public class SearchPhotosActivity extends UiActivity
     @Override
     protected int getLayoutResId() {
         return R.layout.activity_home;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_search_photos, menu);
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(
+                menu.findItem(R.id.action_search_photos));
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                presenter.onSearchTextChange(newText);
+                return true;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

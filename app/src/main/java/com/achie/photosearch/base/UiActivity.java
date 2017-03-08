@@ -62,7 +62,7 @@ public abstract class UiActivity extends AppCompatActivity {
     }
 
     protected boolean showUpNavigation() {
-        return true;
+        return false;
     }
 
     public void showProgressDialog(boolean isCancelable) {

@@ -22,15 +22,6 @@ public class Photo {
     @JsonProperty("title")
     private String title;
 
-    @JsonProperty("ispublic")
-    private String isPublic;
-
-    @JsonProperty("isfriend")
-    private String isFriend;
-
-    @JsonProperty("isfamily")
-    private String isFamily;
-
     public String getId() {
         return id;
     }
@@ -79,27 +70,20 @@ public class Photo {
         this.title = title;
     }
 
-    public String getIsPublic() {
-        return isPublic;
-    }
+    public String getImageUrl(char size) {
+        // TODO validate for right size and throw exception if required
+        StringBuilder builder = new StringBuilder("https://farm");
+        builder.append(farm)
+                .append(".staticflickr.com/")
+                .append(server)
+                .append('/')
+                .append(id)
+                .append('_')
+                .append(secret)
+                .append('_')
+                .append(size)
+                .append(".jpg");
 
-    public void setIsPublic(String isPublic) {
-        this.isPublic = isPublic;
-    }
-
-    public String getIsFriend() {
-        return isFriend;
-    }
-
-    public void setIsFriend(String isFriend) {
-        this.isFriend = isFriend;
-    }
-
-    public String getIsFamily() {
-        return isFamily;
-    }
-
-    public void setIsFamily(String isFamily) {
-        this.isFamily = isFamily;
+        return builder.toString();
     }
 }
