@@ -1,4 +1,4 @@
-package com.achie.flickrsearch;
+package com.achie.photosearch;
 
 import org.junit.Test;
 

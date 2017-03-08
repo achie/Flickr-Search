@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="primary">@android:color/white</color>
+    <color name="primary_dark">#454545</color>
+    <color name="primary_accent">#8d99a7</color>
+
+    <color name="text_primary">#73777c</color>
+    <color name="text_search_view_hint">#bfc3c7</color>
+    <color name="text_search_view_text">@color/text_primary</color>
+    <color name="text_photo_list_item">@android:color/white</color>
+
+    <color name="photo_list_divider">@android:color/white</color>
+    <color name="photo_list_item_title">#244e4e4e</color>
+
 </resources>

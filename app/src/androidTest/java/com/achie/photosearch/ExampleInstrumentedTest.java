@@ -1,4 +1,4 @@
-package com.achie.flickrsearch;
+package com.achie.photosearch;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

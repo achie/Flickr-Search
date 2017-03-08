@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="toolbar_elevation">2dp</dimen>
+    <dimen name="search_view_text_size">20sp</dimen>
+
+    <dimen name="photo_list_item_height">160dp</dimen>
+    <dimen name="photo_list_divider_height">12dp</dimen>
+</resources>
