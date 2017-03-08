@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:layout="@layout/empty_view" />
 
-        <com.xero.orgs.ui.view.EmptySupportingRecyclerView
+        <com.achie.photosearch.view.EmptySupportingRecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

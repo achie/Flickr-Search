@@ -11,8 +11,8 @@ import com.achie.photosearch.R;
 
 public abstract class UiActivity extends AppCompatActivity {
 
-    private Toolbar mActivityTitleBar;
-    private ProgressDialog mProgressDialog;
+    private Toolbar activityTitleBar;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +26,8 @@ public abstract class UiActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        if (mProgressDialog != null) {
-            mProgressDialog.dismiss();
+        if (progressDialog != null) {
+            progressDialog.dismiss();
         }
         super.onDestroy();
     }
@@ -44,8 +44,8 @@ public abstract class UiActivity extends AppCompatActivity {
 
     protected void initToolbar() {
         if (usesDefaultToolbar()) {
-            mActivityTitleBar = (Toolbar) findViewById(R.id.toolbar_main);
-            setSupportActionBar(mActivityTitleBar);
+            activityTitleBar = (Toolbar) findViewById(R.id.toolbar_main);
+            setSupportActionBar(activityTitleBar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(showUpNavigation());
         }
     }
@@ -77,12 +77,12 @@ public abstract class UiActivity extends AppCompatActivity {
                                    @StringRes int messageResId, boolean isCancelable) {
         String title = titleResId != 0 ? getString(titleResId) : null;
         String message = messageResId != 0 ? getString(messageResId) : null;
-        mProgressDialog = ProgressDialog.show(this, title, message, true, isCancelable);
+        progressDialog = ProgressDialog.show(this, title, message, true, isCancelable);
     }
 
     public void dismissProgressDialog() {
-        if (mProgressDialog != null) {
-            mProgressDialog.dismiss();
+        if (progressDialog != null) {
+            progressDialog.dismiss();
         }
     }
 

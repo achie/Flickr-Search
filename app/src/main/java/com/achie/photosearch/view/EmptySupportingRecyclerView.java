@@ -7,9 +7,9 @@ import android.view.View;
 
 public class EmptySupportingRecyclerView extends RecyclerView {
 
-    private View mEmptyView;
+    private View emptyView;
 
-    private final AdapterDataObserver mDataObserver = new AdapterDataObserver() {
+    private final AdapterDataObserver dataObserver = new AdapterDataObserver() {
         @Override
         public void onChanged() {
             checkIfEmpty();
@@ -39,9 +39,9 @@ public class EmptySupportingRecyclerView extends RecyclerView {
     }
 
     void checkIfEmpty() {
-        if (mEmptyView != null && getAdapter() != null) {
+        if (emptyView != null && getAdapter() != null) {
             final boolean isEmptyViewVisible = getAdapter().getItemCount() == 0;
-            mEmptyView.setVisibility(isEmptyViewVisible ? VISIBLE : GONE);
+            emptyView.setVisibility(isEmptyViewVisible ? VISIBLE : GONE);
             setVisibility(isEmptyViewVisible ? GONE : VISIBLE);
         }
     }
@@ -50,22 +50,22 @@ public class EmptySupportingRecyclerView extends RecyclerView {
     public void setAdapter(Adapter adapter) {
         final Adapter oldAdapter = getAdapter();
         if (oldAdapter != null) {
-            oldAdapter.unregisterAdapterDataObserver(mDataObserver);
+            oldAdapter.unregisterAdapterDataObserver(dataObserver);
         }
         super.setAdapter(adapter);
         if (adapter != null) {
-            adapter.registerAdapterDataObserver(mDataObserver);
+            adapter.registerAdapterDataObserver(dataObserver);
         }
 
         checkIfEmpty();
     }
 
     public void setEmptyView(View emptyView) {
-        mEmptyView = emptyView;
+        this.emptyView = emptyView;
         checkIfEmpty();
     }
 
     public View getEmptyView() {
-        return mEmptyView;
+        return this.emptyView;
     }
 }

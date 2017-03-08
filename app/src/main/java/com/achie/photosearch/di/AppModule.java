@@ -22,16 +22,16 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 @Module
 public class AppModule {
 
-    private Context mContext;
+    private Context context;
 
     public AppModule(Context context) {
-        mContext = context.getApplicationContext();
+        this.context = context.getApplicationContext();
     }
 
     @Provides
     @Singleton
     Context provideApplicationContext() {
-        return mContext;
+        return context;
     }
 
     @Provides

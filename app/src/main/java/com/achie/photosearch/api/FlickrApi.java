@@ -14,7 +14,13 @@ public interface FlickrApi {
             "api_key=" + API_KEY;
 
     String PARAM_SEARCH_TEXT = "text";
+    String PARAM_PAGE = "page";
+    String PARAM_PER_PAGE = "per_page";
 
     @GET(URL_SEARCH)
-    Observable<SearchPhotosResponse> searchPhotos(@Query(PARAM_SEARCH_TEXT) String searchText);
+    Observable<SearchPhotosResponse> searchPhotos(
+            @Query(PARAM_SEARCH_TEXT) String searchText,
+            @Query(PARAM_PAGE) int page,
+            @Query(PARAM_PER_PAGE) int perPage
+    );
 }

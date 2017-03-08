@@ -13,8 +13,9 @@ public class DataManager {
         this.flickrApi = flickrApi;
     }
 
-    public Observable<SearchPhotosResponse.PaginatedPhotos> getPaginatedPhotos(String searchText) {
-        return flickrApi.searchPhotos(searchText)
+    public Observable<SearchPhotosResponse.PaginatedPhotos> getPaginatedPhotos(
+            String searchText, int page, int perPage) {
+        return flickrApi.searchPhotos(searchText, page, perPage)
                 .flatMap(response -> Observable.just(response.getPaginatedPhotos()));
     }
 
