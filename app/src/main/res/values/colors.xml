@@ -9,7 +9,7 @@
     <color name="text_search_view_text">@color/text_primary</color>
     <color name="text_photo_list_item">@android:color/white</color>
 
-    <color name="photo_list_divider">@color/text_search_view_hint</color>
+    <color name="photo_list_divider">@android:color/white</color>
     <color name="photo_list_item_title">#244e4e4e</color>
 
 </resources>

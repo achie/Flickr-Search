@@ -7,5 +7,5 @@
     <dimen name="search_view_text_size">20sp</dimen>
 
     <dimen name="photo_list_item_height">160dp</dimen>
-    <dimen name="photo_list_divider_height">1dp</dimen>
+    <dimen name="photo_list_divider_height">12dp</dimen>
 </resources>

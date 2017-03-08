@@ -85,7 +85,7 @@ public class PhotosListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 //                titleTextView.setVisibility(View.GONE);
             }
 
-            String photoUtl = photo.getImageUrl('l');
+            String photoUtl = photo.getImageUrl('z');
             if (!TextUtils.isEmpty(photoUtl)) {
                 Glide.with(context).load(new GlideUrl(photoUtl))
                         .placeholder(R.drawable.image_list_placeholder)
