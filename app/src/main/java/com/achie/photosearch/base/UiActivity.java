@@ -1,4 +1,4 @@
-package com.achie.flickrsearch.base;
+package com.achie.photosearch.base;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
-import com.achie.flickrsearch.R;
+import com.achie.photosearch.R;
 
 public abstract class UiActivity extends AppCompatActivity {
 

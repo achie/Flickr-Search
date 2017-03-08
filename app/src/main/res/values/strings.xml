@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Flickr-Search</string>
+    <string name="app_name">Photos Search</string>
 
     <string name="loading">Loading&#8230;</string>
 </resources>
