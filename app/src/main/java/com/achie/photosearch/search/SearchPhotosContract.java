@@ -15,8 +15,6 @@ public class SearchPhotosContract {
 
         void unbindView();
 
-        void onSearch(String text);
-
         void onSearchTextChange(String newText);
     }
 }

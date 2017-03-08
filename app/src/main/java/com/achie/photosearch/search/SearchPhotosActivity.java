@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
-import android.view.View;
 
 import com.achie.photosearch.PhotoSearchApp;
 import com.achie.photosearch.R;
@@ -17,7 +16,7 @@ import com.achie.photosearch.di.UiModule;
 import javax.inject.Inject;
 
 public class SearchPhotosActivity extends UiActivity
-        implements SearchPhotosContract.View, View.OnClickListener {
+        implements SearchPhotosContract.View {
 
     @Inject SearchPhotosContract.Presenter presenter;
 
@@ -25,7 +24,6 @@ public class SearchPhotosActivity extends UiActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initUiComponent().inject(this);
-        findViewById(R.id.btn_start_auth).setOnClickListener(this);
     }
 
     @Override
@@ -36,6 +34,11 @@ public class SearchPhotosActivity extends UiActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_search_photos, menu);
+        initSearchView(menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    private void initSearchView(Menu menu) {
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(
                 menu.findItem(R.id.action_search_photos));
 
@@ -51,16 +54,6 @@ public class SearchPhotosActivity extends UiActivity
                 return true;
             }
         });
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btn_start_auth:
-                startAuth();
-                break;
-        }
     }
 
     protected UiComponent initUiComponent() {
@@ -69,9 +62,5 @@ public class SearchPhotosActivity extends UiActivity
                 .appComponent(appComponent)
                 .uiModule(new UiModule())
                 .build();
-    }
-
-    private void startAuth() {
-        presenter.onSearch("sunset");
     }
 }

@@ -30,18 +30,14 @@ public class SearchPhotosPresenter implements SearchPhotosContract.Presenter {
     }
 
     @Override
-    public void onSearch(String text) {
+    public void onSearchTextChange(String newText) {
         if (mSubscription != null && !mSubscription.isUnsubscribed()) {
             mSubscription.unsubscribe();
         }
-        mSubscription = dataManager.getPaginatedPhotos(text)
+        mSubscription = dataManager.getPaginatedPhotos(newText)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe();
-    }
-
-    @Override
-    public void onSearchTextChange(String newText) {
 
     }
 }
